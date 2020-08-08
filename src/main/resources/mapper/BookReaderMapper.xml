@@ -19,10 +19,7 @@
     <!--修改读者的信息-->
     <update id="updateBookReader" parameterType="com.lyliu.java.bookmanager.bean.BookReaderBean">
         update tb_reader
-        set name = #{name}
-        sex = #{sex}
-        phone = #{phone}
-        where code = #{code}
+        set name = #{name} ,sex = #{sex},phone = #{phone} where code = #{code}
     </update>
 
     <delete id="dropUser" parameterType="String">
