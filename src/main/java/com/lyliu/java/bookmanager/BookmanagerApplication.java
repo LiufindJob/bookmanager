@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @MapperScan("com.lyliu.java.bookmanager.mapper")
 public class BookmanagerApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Throwable {
         SpringApplication.run(BookmanagerApplication.class, args);
     }
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lyliu.java.bookmanager.mapper.BookReaderMapper">
+
+    <!--查询所有用户的信息，返回一个List<BookReaderBean>的结构-->
+    <select id="getBookReadersInfo" resultType="com.lyliu.java.bookmanager.bean.BookReaderBean">
+        select id, code, name, sex, phone
+        from tb_reader
+        order by code
+    </select>
+
+    <!--查询指定用户的信息，BookReaderBean的结构-->
+    <select id="getBookReaderInfo" resultType="com.lyliu.java.bookmanager.bean.BookReaderBean">
+        select id, code, name, sex, phone
+        from tb_reader
+        where code = #{code}
+    </select>
+
+    <!--修改读者的信息-->
+    <update id="updateBookReader" parameterType="com.lyliu.java.bookmanager.bean.BookReaderBean">
+        update tb_reader
+        set name = #{name}
+        sex = #{sex}
+        phone = #{phone}
+        where code = #{code}
+    </update>
+
+    <delete id="dropUser" parameterType="String">
+        DELETE FROM tb_reader
+        WHERE code = #{code}
+    </delete>
+
+</mapper>
