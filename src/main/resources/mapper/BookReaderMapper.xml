@@ -19,15 +19,21 @@
     <!--修改读者的信息-->
     <update id="updateBookReader" parameterType="com.lyliu.java.bookmanager.bean.BookReaderBean">
         update tb_reader
-        set name = #{name}
-        sex = #{sex}
+        set name = #{name},
+        sex = #{sex},
         phone = #{phone}
-        where code = #{code}
+        where code = #{code};
     </update>
 
-    <delete id="dropUser" parameterType="String">
+    <delete id="dropBookReader" parameterType="String">
         DELETE FROM tb_reader
         WHERE code = #{code}
     </delete>
+
+    <insert id="addBookReader" parameterType="com.lyliu.java.bookmanager.bean.BookReaderBean">
+        insert into tb_reader
+        (code, name, sex, phone)
+        values (#{code}, #{name},#{sex},#{phone});
+    </insert>
 
 </mapper>

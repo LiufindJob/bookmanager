@@ -12,5 +12,6 @@ public interface BookReaderService {
     ArrayList<BookReaderBean> getBookReadersInfo();
     BookReaderBean getBookReaderInfo(String code);
     int updateBookReader(BookReaderBean bookReaderBean);
-    int dropReader(String code);
+    int dropBookReader(String code);
+    int addBookReader(BookReaderBean bookReaderBean);
 }

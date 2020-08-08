@@ -10,5 +10,6 @@ public interface BookReaderMapper {
     ArrayList<BookReaderBean> getBookReadersInfo();
     BookReaderBean getBookReaderInfo(String code);
     int updateBookReader(BookReaderBean bookReaderBean);
-    int dropUser(String code);
+    int addBookReader(BookReaderBean bookReaderBean);
+    int dropBookReader(String code);
 }

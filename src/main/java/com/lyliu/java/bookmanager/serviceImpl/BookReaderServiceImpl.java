@@ -30,10 +30,14 @@ public class BookReaderServiceImpl implements BookReaderService {
 
     }
 
+    @Override
+    public int dropBookReader(String code) {
+        return bookReaderMapper.dropBookReader(code);
+    }
 
     @Override
-    public int dropReader(String code) {
-        return bookReaderMapper.dropUser(code);
+    public int addBookReader(BookReaderBean bookReaderBean) {
+        return bookReaderMapper.addBookReader(bookReaderBean);
     }
 
 }
